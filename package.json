@@ -1,6 +1,6 @@
 {
   "name": "level-counter",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "repository": "https://github.com/stagas/level-counter",
   "description": "keep count of the elements in a sublevel",
   "keywords": ["level", "levelup", "counter"],
