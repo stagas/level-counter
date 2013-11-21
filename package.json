@@ -1,0 +1,19 @@
+{
+  "name": "level-counter",
+  "version": "0.0.1",
+  "repository": "https://github.com/stagas/level-counter",
+  "description": "keep count of the elements in a sublevel",
+  "keywords": ["level", "levelup", "counter"],
+  "author": "stagas <gstagas@gmail.com>",
+  "license": "MIT",
+  "main": "index.js",
+  "dependencies": {
+    "level-inc": "~0.0.1"
+  },
+  "devDependencies": {
+    "level": "~0.18.0",
+    "sublevel": "~0.3.1",
+    "should": "~2.1.0"
+  },
+  "engines": { "node": "*" }
+}
