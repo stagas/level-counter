@@ -31,6 +31,26 @@ describe("counter(db)", function(){
     db.should.have.property('count');
   })
 
+  it("should be invisible from parent", function(done){
+    counter(db);
+    db.put('foo', 'bar', function(err){
+      var results = [];
+      db.count(function(err, count){
+        count.should.equal(1);
+        var s = db.createReadStream();
+        s.on('data', function(data){
+          results.push(data);
+        });
+        s.on('end', function(){
+          results.should.eql([
+            { key: 'foo', value: 'bar' }
+          ]);
+          done();
+        });
+      });
+    });
+  })
+
 })
 
 describe("when putting elements", function(){

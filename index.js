@@ -29,10 +29,6 @@ module.exports = function(db){
   var counter = db.sublevel('counter', { valueEncoding: 'utf8' });
   counter.inc = inc(counter);
 
-  // sublevel and redirect items so counter is invisible
-  var items = db.sublevel('items');
-  db.path = items.path;
-
   // decorate methods
   db.put = decorate(db.put, 1);
   db.del = decorate(db.del, -1);
